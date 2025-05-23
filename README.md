@@ -2,7 +2,16 @@
 A Python project for generating high-quality speech from text using the Bark text-to-speech model by Suno. Converts input text into WAV audio files with customizable voice presets (e.g., v2/en_speaker_9). Built with Hugging Face Transformers, PyTorch, and SciPy. Ideal for creating narrated audio, voiceovers, etc.
 
 What is Bark?
-Bark is a transformer-based text-to-audio model created by Suno. It can generate pretty realistic voices. It also has multilingual
+Bark is a transformer-based text-to-audio model created by Suno. It can generate pretty realistic voices. It also has multilingual speech and it can also generate music, background noise and simple sound effects.
+<br>
+Visit the official bark repository here: https://github.com/suno-ai/bark
+<br>
+Access the Voice Prompt Library of Bark here: https://suno-ai.notion.site/8b8e8749ed514b0cbf3f699013548683?v=bc67cff786b04b50b3ceb756fd05f68c&pvs=143
+<br>
+The voice prompt library includes the presets. There are many different languages in which the presets are available
+<br>
+<br>
+You can also include some known non-speech sounds using the dictionary available at the Bark repository.
 
 # Prerequisites 
 Having VSCODE with python installed, or any other compatible coding environment
@@ -11,6 +20,8 @@ Having VSCODE with python installed, or any other compatible coding environment
 Open your terminal or command prompt and run:
 <br>
 ```pip install transformers```
+<br> 
+Please note, if you have transformers installed, make sure they are updated to its latest version to avoid any possible errors.
 <br>
 ```pip install torch torchvision torchaudio```
 <br>
