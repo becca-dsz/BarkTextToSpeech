@@ -14,3 +14,11 @@ Example: “King” represented as a vector with features that correspond to con
 Embeddings capture relationships: King - Man + Woman ≈ Queen.
 Real embeddings have hundreds (e.g., 300 in Google’s Word2Vec) or thousands (e.g., 12,000 in GPT) of dimensions.
 Meaningful relationships exist in vector space, such as gender or country-capital vectors.
+
+## Static VS Contextual Embeddings
+
+Static embeddings: One fixed vector per word regardless of context (e.g., Word2Vec, GloVe).
+Static embeddings can’t differentiate word meanings in different contexts (e.g., “track” as a railway vs. “track” as to follow).
+Contextual embeddings: Word vectors change based on sentence context.
+Example of contextual embedding: The word “dish” changes meaning in “rice dish” vs. “cheese dish.”
+Contextual embeddings improve next-word prediction by adjusting based on nearby words and sentence context.
