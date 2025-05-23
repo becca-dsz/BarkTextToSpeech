@@ -40,7 +40,7 @@ Your code may take few minutes to run. Do not hurry
 ```BarkModel```: The Bark text-to-speech model, which converts text into audio
 <br>
 <br>
-```scipy.io.wavfile```: A module from the scipy libraryused to save the generated audio as a WAV file
+```scipy.io.wavfile```: A module from the scipy library used to save the generated audio as a WAV file
 <br>
 <br>
 ```torch```: The PyTorch library, used for tensor operations and model computations
@@ -50,7 +50,7 @@ Your code may take few minutes to run. Do not hurry
 The processor handles text tokenization and prepares it for the model
 <br>
 <br>
-```BarkModel.from_pretrained("suno/bark")```: Loadsthe pre-trained Bark model, which is designed for text-to-speech tasks
+```BarkModel.from_pretrained("suno/bark")```: Loads the pre-trained Bark model, which is designed for text-to-speech tasks
 <br>
 <br>
 ```model.to("cpu")```: Moves the model to the CPU for computation.
@@ -70,7 +70,7 @@ This ensures the model runs on the CPU rather than a GPU, which might be useful 
 <br>
     The processor converts the input text into a format suitable for the Bark model, using the specified voice_preset
     <br>
-    return_tensors="pt": specfifies that the output should be PyTorch tensors (compatible with the torch library)
+    return_tensors="pt": specifies that the output should be PyTorch tensors (compatible with the torch library)
     <br>
     inputs: dictionary containing the processed text data (eg tokenized text or embeddings) required by the model
 <br>
@@ -85,20 +85,20 @@ This ensures the model runs on the CPU rather than a GPU, which might be useful 
 <br>
 <br>
 ```torch.no_grad()```: 
-Disables gradient computation to save memory and speed up inference, as gradients are not neededfor generating audio (only for training)
+Disables gradient computation to save memory and speed up inference, as gradients are not needed for generating audio (only for training)
 <br>
 <br>
 ```model.generate(**inputs)```: Calls the Bark Model's generate method, passing the processed inputs. The model generates an audio waveform as a tensor. The output, audio_array, is a tensor containing the raw audio data
 <br>
 <br>
-```audio_array.cpu()``` : Ensures the audio tensoris on the CPU
+```audio_array.cpu()``` : Ensures the audio tensor is on the CPU
 <br>
 ```.numpy()``` : Converts the PyTorch tensor to a NumPy array, which is compatible with the scipy.io.wavfile.write function
 <br>
-```.squeeze()``` : Removes any single-dimensional entries from the array. This ensures the audio data is in the correct forat for saving as a WAV file
+```.squeeze()``` : Removes any single-dimensional entries from the array. This ensures the audio data is in the correct format for saving as a WAV file
 <br>
 <br>
-```model.generation_config.sample_rate```: Retrieves the sample rate (eg., 24000 Hz) defined in the model's configuration. The sample rate determinnes the quality and playback speed of the audio
+```model.generation_config.sample_rate```: Retrieves the sample rate (eg., 24000 Hz) defined in the model's configuration. The sample rate determines the quality and playback speed of the audio
 <br>
 <br>
 ```scipy.io.wavfile.write(output, rate=sample_rate, data=audio_array)```: Saves the audio data as a WAV file at the path specified by the output. The rate parameter sets the sample rate for the audio file
