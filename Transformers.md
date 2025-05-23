@@ -37,3 +37,10 @@ Decoder: Uses the encoder’s intput to generate output sequence (like predictin
 Example: English to Hindi translation—encoder produces embeddings for English sentence; decoder generates Hindi sentence word-by-word.
 BERT uses only the encoder part.
 GPT uses only the decoder part, but still follows the Transformer architecture principles.
+
+## Training VS Inference
+
+In training, the model learns from large datasets by predicting next words and minimizing errors using backpropagation.
+During inference, the trained model predicts next words or translates sentences.
+Model training uses massive text corpora (Wikipedia, internet, books).
+Probability distribution over vocabulary is learned to predict the most likely next word.
