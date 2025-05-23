@@ -33,7 +33,7 @@ Transformers create rich contextual embeddings by weighing all words’ influenc
 
 Transformer architecture comprises:
 Encoder: Processes input data and produces contextual embeddings for each token.
-Decoder: Uses the encoder’s output to generate output sequence (like predicting next words or translating).
+Decoder: Uses the encoder’s intput to generate output sequence (like predicting next words or translating).
 Example: English to Hindi translation—encoder produces embeddings for English sentence; decoder generates Hindi sentence word-by-word.
 BERT uses only the encoder part.
 GPT uses only the decoder part, but still follows the Transformer architecture principles.
