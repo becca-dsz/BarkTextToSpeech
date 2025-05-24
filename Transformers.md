@@ -44,3 +44,35 @@ In training, the model learns from large datasets by predicting next words and m
 During inference, the trained model predicts next words or translates sentences.
 Model training uses massive text corpora (Wikipedia, internet, books).
 Probability distribution over vocabulary is learned to predict the most likely next word.
+
+## 🔡 Vocabulary and Tokenization
+Vocabulary consists of “tokens” rather than perfect words.
+Tokens can be sub-word units (e.g., “playing” can be tokenized into “play” + “ing”).
+BERT uses ~30,000 tokens, GPT uses ~50,000 tokens.
+Each token has a static embedding vector stored in a matrix (size varies by model, e.g., 768 for BERT, 12,228 for GPT).
+
+## 🔹 Tokenization and Positional Embeddings 
+After tokenizing input, static embeddings are retrieved for each token from the embedding matrix.
+Transformers process entire sequences in parallel, not sequentially like RNNs.
+Since word order is important, positional embeddings are added to static embeddings.
+Positional embeddings encode word order information so the model knows the position of each token.
+Positional embeddings are generated via a sine/cosine formula from the original Transformer paper.
+
+## 👀 Attention Mechanism
+Attention allows words to “attend” to other relevant words when encoding meaning.
+Example: For the word “Indian,” attention looks at related words like “dosa,” “dola,” and pronouns like “B” in the sentence.
+Attention assigns weights to each word showing how much it influences the target word’s meaning (e.g., 36% sweet, 14% Indian, etc.).
+Attention scores are normalized probabilities showing the level of relevance.
+
+## 🔑 Query, Key, and Value Vectors: Intuitive Explanation
+Query-Key-Value concept explained via library and professor-student analogies:
+Query: What you are searching for or interested in (e.g., “I want quantum physics books”).
+Key: Metadata or descriptors used to index and locate relevant data (e.g., book labels or students’ expertise).
+Value: The actual content or data retrieved (e.g., the book or essay content).
+<br>
+In Transformers:
+Query, Key, and Value vectors are derived from token embeddings.
+Attention weights are computed as dot products of Query and Key vectors, passed through a softmax to obtain probabilities.
+Values are weighted sums combining the most relevant information for contextual embedding.
+This modifies static embeddings into rich, context-aware embeddings.
+
